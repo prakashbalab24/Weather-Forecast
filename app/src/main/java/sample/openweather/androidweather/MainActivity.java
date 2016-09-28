@@ -36,7 +36,7 @@ public class MainActivity extends ListActivity {
 	private static final String TAG_HUM = "humidity";
 	private static final String TAG_PRS = "pressure";
 	private static final String TAG_TS = "timestamp";
-	private static final String APPID = BuildConfig.APPID;/* Please generate Id from openweatherapi */
+	private static final String APPID = BuildConfig.APPID;/* Please generate Id from openweatherapi and paste it in gadle.properties */
 
 
 
