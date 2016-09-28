@@ -36,7 +36,7 @@ public class MainActivity extends ListActivity {
 	private static final String TAG_HUM = "humidity";
 	private static final String TAG_PRS = "pressure";
 	private static final String TAG_TS = "timestamp";
-	private static final String APPID = "ae4c1ffd468a8b05b0b6253effef0354";/* Please generate Id from openweatherapi */
+	private static final String APPID = BuildConfig.APPID;/* Please generate Id from openweatherapi */
 
 
 
@@ -58,7 +58,7 @@ String url ="";
 		Intent i = getIntent();
 		urllocation = i.getStringExtra("mylocation"); // getting location from user
 		url = url1+urllocation+url2; // adding location to the url
-		Log.d("myinfo", "> " + urllocation);
+		Log.d("myinfo", "> " + url);
 		forecastList = new ArrayList<HashMap<String, String>>();
 
 		ListView lv = getListView();
