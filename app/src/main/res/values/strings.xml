@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Android Weather</string>
+    <string-array name="spinnerItems">
+        <item>Banglore</item>
+        <item>Chennai</item>
+        <item>Mumbai</item>
+        <item>New Delhi</item>
+    </string-array>
+</resources>
