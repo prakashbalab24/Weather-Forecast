@@ -1,0 +1,6 @@
+{
+  "name": "Android weather",
+  "tagline": "This is a sample app for weather forecast for 7 days. This app uses \"openweathermap\" api. Please visit openweathermap.org for more details and APPID.",
+  "body": "# Android_Weather\r\nThis is a sample app for weather forecast for 7 days. This app uses \"openweathermap\" api.\r\n\r\n#### Description of the App\r\n\r\nThis Android app will display the weather forecast of next & days in a list view. This app uses \"open weather map\" api for the data.\r\n\r\n##### Note: Please generate Key from the website and paste it inside the MainActivity.java code to make the app work. \r\n\r\n### Website: http://openweathermap.org/\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
