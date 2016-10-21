@@ -5,4 +5,4 @@
     android:gravity="center"
     android:padding="10dp"
     android:singleLine="true"
-    android:textColor="@color/colorAccent" />
+    android:textColor="@color/colorPrimary" />

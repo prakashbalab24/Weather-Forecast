@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:paddingBottom="2dip"
         android:paddingTop="6dip"
-        android:textColor="#FF8A0D"
+        android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         android:textStyle="bold" />
 

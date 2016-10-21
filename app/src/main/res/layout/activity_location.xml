@@ -2,32 +2,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/backico"
+    android:background="@drawable/kite"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:theme="?attr/actionBarTheme"
+        android:minHeight="?attr/actionBarSize"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="36dp"
-        android:text="WEATHER REPORT"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#661300" />
+        android:layout_alignParentStart="true"
+        android:id="@+id/toolbar" />
 
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="31dp"
-        android:text="Location"
-        android:textColor="#661300"
-        android:layout_above="@+id/spinner1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="64dp" />
 
     <Spinner
         android:id="@+id/spinner1"
@@ -35,17 +22,22 @@
         android:layout_height="40dp"
         android:background="@drawable/spinner_button"
         android:layout_marginLeft="18dp"
+        android:transitionName="fly"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:background="@color/colorAccent"
         app:fabSize="normal"
         android:layout_margin="20dp"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:src="@android:drawable/ic_search_category_default" />
+        android:src="@android:drawable/ic_search_category_default"
+        app:backgroundTint="?attr/actionModeSplitBackground" />
+
+
 
 
 </RelativeLayout>

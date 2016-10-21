@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/backico"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/kite"
     android:orientation="vertical">
 	<!-- Main ListView 
 		 Always give id value as list(@android:id/list)
 	-->
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="?attr/actionBarTheme"
+        android:titleTextColor="@color/colorAccent"
+        android:minHeight="?attr/actionBarSize"
+        android:transitionName="fly"
+        android:id="@+id/toolbar" />
+
     <ListView
-        android:id="@android:id/list"
+        android:id="@+id/list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"/>
 

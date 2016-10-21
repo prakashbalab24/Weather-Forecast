@@ -13,18 +13,23 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends AppCompatActivity {
 
     private ProgressDialog pDialog;
+    private ListView lv;
 
     // URL to get JSON data
 
@@ -54,12 +59,20 @@ public class MainActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent i = getIntent();
-        urllocation = i.getStringExtra("mylocation"); // getting location from user
+        urllocation = i.getStringExtra("mylocation");
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitleTextColor(getResources().getColor(R.color.colorAccent));
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(urllocation);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        // getting location from user
         url = url1 + urllocation + url2; // adding location to the url
         Log.d("myinfo", "> " + url);
         forecastList = new ArrayList<HashMap<String, String>>();
 
-        ListView lv = getListView();
+        lv = (ListView) findViewById(R.id.list);
 
 
         // Listview on item click listener for single day details
@@ -207,9 +220,20 @@ public class MainActivity extends ListActivity {
                     TAG_TS, TAG_DES, TAG_HUM, TAG_PRS}, new int[]{R.id.name,
                     R.id.date, R.id.des, R.id.hum, R.id.prss});
 
-            setListAdapter(adapter);
+            lv.setAdapter(adapter);
         }
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }
