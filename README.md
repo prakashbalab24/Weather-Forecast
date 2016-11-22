@@ -8,3 +8,5 @@ This Android app will display the weather forecast of next 7 days in a list view
 ##### Note: Please generate Key from the website and paste it inside the gradle.properties to make the app work. 
 
 ### Website: http://openweathermap.org/
+
+## Visit [opensourceandroid.in](http://opensourceandroid.in) for more projects.
