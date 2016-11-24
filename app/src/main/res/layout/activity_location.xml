@@ -2,14 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/kite"
+    android:background="@color/back"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:theme="?attr/actionBarTheme"
+        android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
@@ -37,7 +36,24 @@
         android:src="@android:drawable/ic_search_category_default"
         app:backgroundTint="?attr/actionModeSplitBackground" />
 
+    <TextView
+        android:text="Select City"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:id="@+id/textView"
+        android:layout_above="@+id/spinner1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="31dp" />
 
+    <TextView
+        android:text="This is an open source Demo App."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView6" />
 
 
 </RelativeLayout>

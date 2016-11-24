@@ -1,6 +1,7 @@
 package sample.openweather.androidweather;
 
 import android.app.ActivityOptions;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.app.Activity;
@@ -9,6 +10,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.ToolbarWidgetWrapper;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -33,7 +35,6 @@ public class LocationActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle(getString(R.string.app_name));
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
         mySpinner = (Spinner) findViewById(R.id.spinner1);
         final View androidRobotView = mySpinner;
@@ -64,10 +65,20 @@ public class LocationActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 this.finish();
+                return true;
+            case R.id.gitIcon:
+                Uri uri = Uri.parse("http://www.opensourceandroid.in");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
