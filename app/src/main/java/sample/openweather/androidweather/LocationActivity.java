@@ -17,6 +17,7 @@ import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LocationActivity extends AppCompatActivity {
     Spinner mySpinner;
@@ -52,12 +53,17 @@ public class LocationActivity extends AppCompatActivity {
                 location = mySpinner.getSelectedItem().toString();
                 Intent intent = new Intent(LocationActivity.this, MainActivity.class);
                 intent.putExtra("mylocation", location);
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-                    ActivityOptions options = ActivityOptions
+                if(new InternetChecker().isNetworkAvailable(LocationActivity.this)) {
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                        ActivityOptions options = ActivityOptions
                             .makeSceneTransitionAnimation(LocationActivity.this, androidRobotView, "fly");
-                    startActivity(intent, options.toBundle());
-                } else {
-                    startActivity(intent);
+                        startActivity(intent, options.toBundle());
+                    } else {
+                        startActivity(intent);
+                    }
+                }
+                else {
+                    Toast.makeText(LocationActivity.this,"Please Check Internet connection!",Toast.LENGTH_SHORT).show();
                 }
             }
         });
